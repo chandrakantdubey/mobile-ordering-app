@@ -5,16 +5,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Smythe", cursive;
+  letter-spacing: 0.125em;
 }
 
 /* layout */
 header,
 main,
-footer {
-  font-family: "Smythe", cursive;
+.payment {
   width: 600px;
   margin: 0 auto;
-  letter-spacing: 0.125em;
 }
 
 /* header */
@@ -41,7 +41,7 @@ header h1 {
   display: flex;
   gap: 1.5em;
   border-bottom: 1px solid red;
-  margin: 4em;
+  margin: 3em 2.5em;
   padding-bottom: 3em;
 }
 .item-icon {
@@ -53,22 +53,17 @@ header h1 {
   flex-direction: column;
   gap: 0.5em;
 }
-.add-to-cart {
-  align-self: center;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 200;
-  font-size: 32px;
-  color: #3c3c3c;
-  border: 1px solid #3c3c3c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
+.item-add {
   margin-left: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(229, 226, 226);
   cursor: pointer;
+}
+.item-add:hover {
+  background-color: rgb(196, 158, 231);
 }
 .add-to-cart:hover {
   background-color: #6a6868;
@@ -78,53 +73,123 @@ header h1 {
   margin-bottom: 0;
 }
 
-/* billing */
-footer {
-  padding: 3em;
+/* order details */
+.order-details {
   text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
-h2.order-title {
-  margin-bottom: 3em;
+
+/* billing */
+.payment {
+  padding: 1.5em 2.5em;
 }
-.bill-details {
+
+.bill-items,
+.bill-total {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1em;
+  padding: 10px 0;
+}
+.payment hr {
+  margin: 0 -0.5em;
 }
 .bill-item-remove {
   margin-right: auto;
+  margin-left: 25px;
+  border: none;
+  outline: none;
   background-color: inherit;
-  border: 0;
+  font-size: 1em;
   cursor: pointer;
 }
-.bill-ite-price {
-  margin-left: auto;
+
+/* bill button */
+.complete-order {
+  padding: 0.75em 3em;
+  font-size: 1.1em;
+  background-color: blueviolet;
+  border: 0;
+  outline: 0;
+  display: block;
+  margin: 1.5em auto;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
 }
-.bill-total {
-  margin-bottom: 1em;
+.complete-order:hover,
+.complete-order:focus {
+  background-color: rgb(97, 3, 184);
+  color: #fdfbfb;
 }
-hr {
-  margin: 1.5em 0;
-}
-.bill-total {
+
+/* payment-page */
+.payment-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-.bill-complete-order {
-  font-size: 1.2em;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  left: 46px;
-  top: 1048px;
-  padding: 0.75em 0;
-  color: #fff;
-  background: #16db99;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.payment-form {
+  background-color: white;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  z-index: 100;
+  font-family: "Courier New", Courier, monospace;
+}
+.payment-form-title {
+  font-size: 1.75em;
+  text-align: center;
+}
+.payment-page input {
+  width: 350px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  padding: 0.5em 1.5em;
+}
+.payment-form-pay {
+  font-size: 1.25em;
+  line-height: 1.75em;
+  padding: 0.5em;
+  color: white;
+  background-color: blueviolet;
   border: none;
-  font-weight: 600;
-  letter-spacing: 0.125em;
-  font-family: "Smythe", cursive;
-  cursor: pointer;
+}
+.payment-form-pay:hover,
+.payment-form-pay:focus {
+  outline: none;
+  color: antiquewhite;
+  background-color: rgb(90, 6, 169);
+}
+
+.order-placed {
+  text-align: center;
+  padding: 2em 1em;
+  background-color: rgb(210, 178, 240);
+}
+
+/* footer */
+footer {
+  text-align: center;
+  margin: 1.25em 0;
 }

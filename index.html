@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chandrakant's Restaurant</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <header>
@@ -22,7 +22,7 @@
           <p class="item-description">pepperoni,mushrom,mozarella</p>
           <h3 class="item-price">$14</h3>
         </div>
-        <button class="add-to-cart">+</button>
+        <button class="item-add">➕</button>
       </section>
       <section class="item">
         <div class="item-icon">🍔</div>
@@ -31,7 +31,7 @@
           <p class="item-description">avocado, cheese, lettuce, corn</p>
           <h3 class="item-price">$11</h3>
         </div>
-        <button class="add-to-cart">+</button>
+        <button class="item-add">➕</button>
       </section>
       <section class="item">
         <div class="item-icon">🍺</div>
@@ -40,22 +40,25 @@
           <p class="item-description">grain, hops, yeast, water</p>
           <h3 class="item-price">$12</h3>
         </div>
-        <button class="add-to-cart">+</button>
+        <button class="item-add">➕</button>
       </section>
     </main>
-    <footer>
-      <h2 class="order-title">Your order</h2>
-      <div class="bill-details">
-        <h2 class="bill-item-name">Pizza</h2>
-        <button class="bill-item-remove">remove</button>
-        <h3 class="bill-item-price">$14</h3>
-      </div>
-      <hr />
-      <div class="bill-total">
-        <h2 class="bill-item-total">Total:</h2>
-        <h3 class="bill-item-price">$14</h3>
-      </div>
-      <button class="bill-complete-order">Complete Order</button>
-    </footer>
+
+    <h2 class="order-details">Your order Details</h2>
+
+    <div class="payment"></div>
+
+    <footer>Chandrakant Dubey &copy; 2023</footer>
+
+    <div class="payment-page hidden">
+      <div class="overlay"></div>
+      <form class="payment-form">
+        <label class="payment-form-title">Enter Card Details</label>
+        <input type="text" placeholder="Enter your name" />
+        <input type="text" placeholder="Enter card umber" />
+        <input type="text" placeholder="Enter CVV" max="3" />
+        <button class="payment-form-pay" type="button">Pay</button>
+      </form>
+    </div>
   </body>
 </html>
